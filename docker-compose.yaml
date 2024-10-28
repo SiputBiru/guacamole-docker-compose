@@ -1,0 +1,95 @@
+networks:
+  guac-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.30.0.0/16"
+  tunnel:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.25.0/24"
+
+# volumes:
+#  guacwebconfig:
+#    driver: local
+#  guac-dbdata:
+#    driver: local
+
+services:
+  cloudflaretunnel:
+    container_name: cloudflaretunnel-1
+    image: cloudflare/cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      TUNNEL_TOKEN: ${SECRET_TOKEN}
+    depends_on:
+      - guac-psql
+      - guacweb
+      - guacd
+    networks:
+      tunnel:
+        ipv4_address: 192.168.25.2
+
+  guacd:
+    container_name: guacd
+    image: guacamole/guacd
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    depends_on:
+      - guac-psql
+    networks:
+      guac-net:
+        ipv4_address: 172.30.0.2
+
+  guacweb:
+    container_name: guac_web
+    image: guacamole/guacamole
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    ports:
+      - "8080:8080"
+    environment:
+      POSTGRESQL_DATABASE: guacamole_db
+      POSTGRESQL_HOSTNAME: 172.30.0.4
+      POSTGRESQL_PASSWORD: password
+      POSTGRESQL_USER: guacamole_user
+      POSTGRESQL_PORT: 5432
+      GUACD_HOSTNAME: 172.30.0.2
+      GUACD_PORT: 4822
+    depends_on:
+      - guacd
+      - guac-psql
+    networks:
+      guac-net:
+        ipv4_address: 172.30.0.3
+      tunnel:
+        ipv4_address: 192.168.25.3
+    # volumes:
+    # - guacwebconfig:/config
+
+  guac-psql:
+    container_name: guac-psql
+    image: postgres:17.0-alpine3.20
+    restart: unless-stopped
+    hostname: guac-psql
+    shm_size: 128mb
+    stdin_open: true
+    tty: true
+    environment:
+      POSTGRES_USER: guacamole_user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: guacamole_db
+    volumes:
+      - ./init/initdbpsql.sql:/docker-entrypoint-initdb.d/initdb.sql
+      # - guac-dbdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      guac-net:
+        ipv4_address: 172.30.0.4
