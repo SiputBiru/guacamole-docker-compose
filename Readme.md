@@ -10,6 +10,9 @@
 1. clone the repo 
 
 2. Change the .env-example to .env and add your cloudflare token
+```text
+SECRET_TOKEN=YOURCLOUDFLARETOKEN
+```
 
 3. Run the container
 ```sh
