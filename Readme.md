@@ -5,7 +5,7 @@
 <img src="https://raw.githubusercontent.com/docker/compose/main/logo.png" width="200" alt="DockerCompose"/>
 </span>
 
-🧞 To run the container
+## 🧞 To run the container
 
 1. clone the repo 
 
