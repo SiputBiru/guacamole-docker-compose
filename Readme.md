@@ -1,4 +1,4 @@
-# Docker compose Guacamole using Posgresql
+# ![Alt text](https://upload.wikimedia.org/wikipedia/commons/3/31/Apache_Guacamole_logo.png) Docker compose Guacamole using Posgresql
 
 🧞 To run the container
 
