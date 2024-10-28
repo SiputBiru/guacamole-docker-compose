@@ -1,5 +1,7 @@
 # Docker compose Guacamole using Posgresql
-![Guacamole](https://upload.wikimedia.org/wikipedia/commons/3/31/Apache_Guacamole_logo.png | width=200) ![DockerCompose](https://raw.githubusercontent.com/docker/compose/main/logo.png | width=200)
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apache_Guacamole_logo.png" width="200" alt="Guacamole"/>
+<img src="https://raw.githubusercontent.com/docker/compose/main/logo.png" width="200" alt="DockerCompose"/>
 
 🧞 To run the container
 
