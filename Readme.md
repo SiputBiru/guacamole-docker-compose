@@ -13,9 +13,16 @@ docker compose up -d
 
 4. Enjoy! 😁
 
-## I'd have created comment on docker-compose to help for making the volumes, you can just delete it if you want.
+Note: I have created comment on docker-compose to help for making the volumes, you can just delete it if you want.
 
 ## 🚀 Project Structure
 
-Inside the init file, you'll see default initial database config for postgresql
+Inside the init file, you'll see default initial database config for postgresql:
 
+```text
+/
+├── init/
+│   └── initdbpsql.sql
+├── .env-example
+└──  docker-compose.yaml
+```
