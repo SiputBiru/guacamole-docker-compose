@@ -8,20 +8,20 @@
 
 ## 🎮 What this compose file contain
 
-- Network:
+- Network: <br>
     a. guac-net: <br>
-    for the guacamole network
+    for the guacamole network <br>
     b. tunnel: <br>
-    for cloudflare tunnel network
-- Services:
+    for cloudflare tunnel network <br>
+- Services: <br>
     a. Cloudflare Tunnel <br>
-        For tunneling 
+        For tunneling <br>
     b. guacd <br>
-        Provides the guacd daemon, built from the released guacamole-server source with support for VNC, RDP, SSH, telnet, and Kubernetes
+        Provides the guacd daemon, built from the released guacamole-server source with support for VNC, RDP, SSH, telnet, and Kubernetes <br>
     c. guacamole <br>
-        Provides the Guacamole web application running within Tomcat 8 with support for WebSocket. The configuration necessary to connect to guacd, MySQL, PostgreSQL, LDAP, etc. will be generated automatically when the image starts based on Docker links or environment variables.
+        Provides the Guacamole web application running within Tomcat 8 with support for WebSocket. The configuration necessary to connect to guacd, MySQL, PostgreSQL, LDAP, etc. will be generated automatically when the image starts based on Docker links or environment variables. <br>
     d. postgresql <br>
-        Provides the database that Guacamole will use for authentication and storage of connection configuration data.
+        Provides the database that Guacamole will use for authentication and storage of connection configuration data. <br>
 
 I adding cloudflare tunnel for my project purposes you can remove it if you want 😊
 
