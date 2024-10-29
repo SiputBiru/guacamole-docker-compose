@@ -14,8 +14,7 @@
 ## 💡 About the Project
 
 <p>
-I want to use guacamole for my home lab but i want to use docker compose for my convinient
-On this docker compose i add cloudflare tunnel cause i don't really have ip public on my home lab 
+This project sets up Apache Guacamole in a home lab environment using Docker Compose for easy deployment and management. Since my home lab does not have a public IP address, I’ve integrated a Cloudflare Tunnel to enable secure remote access to the Guacamole interface.
 <p>
 
 
