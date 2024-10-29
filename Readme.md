@@ -9,6 +9,7 @@
 ## Table of Contents
 - [About the Project](#-about-the-project)
 - [Features](#-features)
+- [Project Structure](#-project-structure)
 - [To run the container](#️-to-run-the-container)
 
 ## 💡 About the Project
@@ -44,6 +45,18 @@ This project sets up Apache Guacamole in a home lab environment using Docker Com
 
 I adding cloudflare tunnel for my project purposes you can remove it if you want 😊
 
+## 🚀 Project Structure
+
+Inside the init file, you'll see default initial database config for postgresql:
+
+```text
+/
+├── init/
+│   └── initdbpsql.sql
+├── .env-example
+└──  docker-compose.yaml
+```
+
 ## 🛠️ To run the container
 
 1. Clone the Repo 
@@ -64,16 +77,3 @@ docker compose up -d
 4. Enjoy! 😁
 
 Note: I have created comment on docker-compose to help making the volumes, you can just delete it if you want.
-
-## 🚀 Project Structure
-
-Inside the init file, you'll see default initial database config for postgresql:
-
-```text
-/
-├── init/
-│   └── initdbpsql.sql
-├── .env-example
-└──  docker-compose.yaml
-```
-
