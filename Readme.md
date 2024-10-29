@@ -7,11 +7,11 @@
 </span>
 
 ## Table of Contents
-- [About the Project](#about-the-project)
-- [🎮 Features](#features)
-- [🧞 To run the container](#installation)
+- [About the Project](#-about-the-project)
+- [Features](#-features)
+- [To run the container](#️-to-run-the-container)
 
-## About the Project
+## 💡 About the Project
 
 <p>
 I want to use guacamole for my home lab but i want to use docker compose for my convinient
@@ -45,7 +45,7 @@ On this docker compose i add cloudflare tunnel cause i don't really have ip publ
 
 I adding cloudflare tunnel for my project purposes you can remove it if you want 😊
 
-## 🧞 To run the container
+## 🛠️ To run the container
 
 1. Clone the Repo 
 ```bash
