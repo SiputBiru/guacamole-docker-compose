@@ -8,8 +8,8 @@
 
 ## Table of Contents
 - [About the Project](#about-the-project)
-- [Features](#features)
-- [Installation](#installation)
+- [🎮 Features](#features)
+- [🧞 To run the container](#installation)
 
 ## About the Project
 
