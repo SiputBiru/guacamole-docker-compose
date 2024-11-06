@@ -78,6 +78,8 @@ SECRET_TOKEN=YOURCLOUDFLARETOKEN
 docker compose up -d
 ```
 
+4. Open your docker ip address
+
 4. Enjoy! 😁
 
 Note: I have created comment on docker-compose to help making the volumes, you can just delete it if you want.
