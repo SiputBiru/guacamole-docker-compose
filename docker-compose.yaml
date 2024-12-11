@@ -12,11 +12,11 @@ networks:
       config:
         - subnet: "192.168.25.0/24"
 
-# volumes:
-#  guacwebconfig:
-#    driver: local
-#  guac-dbdata:
-#    driver: local
+volumes:
+ guacwebconfig:
+   driver: local
+ guac-dbdata:
+   driver: local
 
 services:
   cloudflaretunnel:
@@ -70,8 +70,8 @@ services:
         ipv4_address: 172.30.0.3
       tunnel:
         ipv4_address: 192.168.25.3
-    # volumes:
-    # - guacwebconfig:/config
+    volumes:
+    - guacwebconfig:/config
 
   guac-psql:
     container_name: guac-psql
@@ -87,7 +87,7 @@ services:
       POSTGRES_DB: guacamole_db
     volumes:
       - ./init/initdbpsql.sql:/docker-entrypoint-initdb.d/initdb.sql
-      # - guac-dbdata:/var/lib/postgresql/data
+      - guac-dbdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     networks:
