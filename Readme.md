@@ -23,7 +23,7 @@ This project establishes Apache Guacamole within my home lab environment using D
 - Docker Engine 🐋
 - Docker Compose 🐳 <br> 
 <br>
-Ref: [Docker Installation](https://docs.docker.com/engine/install/)
+Ref: https://docs.docker.com/engine/install/
 
 ## 🎮 Features
 
